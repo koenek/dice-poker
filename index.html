@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155228667-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-155228667-2');
+        </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dice Poker</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="shortcut icon" href="img/favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="wrapper">
+                <div id="p1__container">
+                    <h1 id="player1-header">Player 1</h1>
+                    <div id="p1-dice-grid">
+                        <img src="./img/dice-1.png" alt="Dice" class="dice p1_position_1">
+                        <img src="./img/dice-2.png" alt="Dice" class="dice p1_position_2">
+                        <img src="./img/dice-3.png" alt="Dice" class="dice p1_position_3">
+                        <img src="./img/dice-4.png" alt="Dice" class="dice p1_position_4">
+                        <img src="./img/dice-5.png" alt="Dice" class="dice p1_position_5">
+                    </div>
+                    <button class="btn-roll btn-roll-p1"><i class="fas fa-dice"></i></button>
+                    <h2 id="p1-turn-count">Turns left |<span id="p1-turns-left"></span>|</h2>
+                    <button class="btn-next btn-next-p1"><i class="fas fa-hand-point-right"></i></button>
+                </div>
+
+                <button class="btn-q"><i class="fas fa-question"></i></button>
+
+                <div id="p2__container">
+                    <h1 id="player2-header">Player 2</h1>
+                    <div id="p2-dice-grid">
+                        <img src="./img/dice-6.png" alt="Dice" class="dice p2_position_1">
+                        <img src="./img/dice-1.png" alt="Dice" class="dice p2_position_2">
+                        <img src="./img/dice-2.png" alt="Dice" class="dice p2_position_3">
+                        <img src="./img/dice-3.png" alt="Dice" class="dice p2_position_4">
+                        <img src="./img/dice-4.png" alt="Dice" class="dice p2_position_5">
+                    </div>
+                    <button class="btn-roll btn-roll-p2"><i class="fas fa-dice"></i></button>
+                    <h2 id="p2-turn-count">Turns left |<span id="p2-turns-left"></span>|</h2>
+                    <button class="btn-next btn-next-p2"><i class="fas fa-hand-point-left"></i></button>
+                </div>
+        </div>
+
+        <div id="help">
+            <h3 class="left">How to play</h3>
+            <p>Each player has a hand of five dice. When it's your turn, you can roll the dice up to three
+                times.
+                Try to get the highest possible rank of dice before your turns are over!</p>
+            <h3 class="left">Ranking of hands</h3>
+            <ul>
+                <li><span class="rank"><u><b>RANK 0</b></u> - Nothing</span> five mismatched dice forming no sequence longer than four.
+                </li>
+                <li><span class="rank"><u><b>RANK 1</b></u> - Pair</span> two dice showing the same value.</li>
+                <li><span class="rank"><u><b>RANK 2</b></u> - Two Pairs</span> two pairs of dice, each showing the same value.</li>
+                <li><span class="rank"><u><b>RANK 3</b></u> - Three-of-a-Kind</span> three dice showing the same value.</li>
+                <li><span class="rank"><u><b>RANK 4</b></u> - Five High Straight</span> dice showing values from 1 through 5, inclusive.
+                </li>
+                <li><span class="rank"><u><b>RANK 5</b></u> - Six High Straight</span> dice showing values from 2 through 6, inclusive.
+                </li>
+                <li><span class="rank"><u><b>RANK 6</b></u> - Full House</span> Pair of one value and Three-of-a-Kind of another.</li>
+                <li><span class="rank"><u><b>RANK 7</b></u> - Four-of-a-Kind</span> four dice showing the same value.</li>
+                <li><span class="rank"><u><b>RANK 8</b></u> - Five-of-a-Kind</span> all five dice showing the same value.</li>
+            </ul>
+        </div>
+
+        <div id="welcome-container">
+            <h1 id="welcome">Welcome to Dice Poker!</h1>
+            <div id="container-left-right">
+                <div id="welcome-left">
+                    <h3 class="left">How to play</h3>
+                    <p>Each player has a hand of five dice. When it's your turn, you can roll the dice up to three
+                        times. After each turn you can click a dice to "hold" it. A dice which is being held will not be thrown on the next roll. 
+                        Try to get the highest possible rank of dice before your turns are over!</p>
+                    <h3 class="left">Ranking of hands</h3>
+                    <ul>
+                        <li><span class="rank"><u><b>RANK 0</b></u> - Nothing</span> five mismatched dice forming no sequence longer than four.</li>
+                        <li><span class="rank"><u><b>RANK 1</b></u> - Pair</span> two dice showing the same value.</li>
+                        <li><span class="rank"><u><b>RANK 2</b></u> - Two Pairs</span> two pairs of dice, each showing the same value.</li>
+                        <li><span class="rank"><u><b>RANK 3</b></u> - Three-of-a-Kind</span> three dice showing the same value.</li>
+                        <li><span class="rank"><u><b>RANK 4</b></u> - Five High Straight</span> dice showing values from 1 through 5, inclusive.</li>
+                        <li><span class="rank"><u><b>RANK 5</b></u> - Six High Straight</span> dice showing values from 2 through 6, inclusive.</li>
+                        <li><span class="rank"><u><b>RANK 6</b></u> - Full House</span> Pair of one value and Three-of-a-Kind of another.</li>
+                        <li><span class="rank"><u><b>RANK 7</b></u> - Four-of-a-Kind</span> four dice showing the same value.</li>
+                        <li><span class="rank"><u><b>RANK 8</b></u> - Five-of-a-Kind</span> all five dice showing the same value.</li>
+                    </ul>
+                </div>
+                <div id="welcome-right">
+                    <form class="name-input">
+                        <div>
+                            <label for="player1"><h3 class="right">Player 1</h3></label>
+                            <input type="text" id="player1-input" name="player1" placeholder="Enter name"/>
+                        </div>
+                        <div>
+                            <label for="player2"><h3 class="right">Player 2</h3></label>
+                            <input type="text" id="player2-input" name="player2" placeholder="Enter name"/>
+                        </div>
+                    </form>
+                        <button class="btn-start"><i class="far fa-play-circle"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-container">
+            <h1 class="results-h1">Results</h1>
+            <div id="container-left-right">
+                <div id="results-left">
+                    <h1 class="results-h1 winner"></h1>
+                    <div id="hands">
+                        <h1 class="results-h1"><u>Hands</u></h1>
+                        <h3 id="result-p1">Player 1: Full House</h3>
+                        <h3 id="result-p2">Player 2: Pair</h3>
+                    </div>
+                </div>
+                <div id="results-right">
+                    <h1 class="results-h1">Play again with the same players?</h1>
+                        <button class="btn-again"><i class="far fa-play-circle"></i></button>
+                        <h1 class="results-h1">Play again with new players?</h1>
+                        <button class="btn-new"><i class="far fa-play-circle"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <footer id="copyright">&copy; by Kevin Koene</footer> -->
+        
+        <!-- <script src="https://kit.fontawesome.com/dd7391bfa9.js"></script> -->
+        <script src="./assets/js/all.js"></script>
+        <script src="./assets/js/index.js"></script>
+        <script>
+            setTimeout(function () {
+                if ((screen.width < 480) || (screen.height < 480)) {
+                    alert('This site is not optimized for mobile devices. Please adjust your browser settings to display the Desktop version of this website.')
+                }
+            }, 100);
+        </script>
+    </body>
+</html>

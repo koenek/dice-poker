@@ -1,0 +1,417 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1570303363992-7f95ee20ebdb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    font-family: 'Leckerli One', cursive;
+    color: #180D00;
+    font-weight: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 100;
+}
+
+h1#player1-header {
+    left: 20%;
+    position: absolute;
+}
+
+h1#player2-header {
+    right: 20%;
+    position: absolute;
+}
+
+h2 {
+    position: absolute;
+    display: none;
+    font-weight: 100;
+}
+
+h2#p1-turn-count {
+    top: 80%;
+    left: 18%;
+}
+
+h2#p2-turn-count {
+    top: 80%;
+    right: 18%;
+}
+
+
+#wrapper {    
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row-reverse wrap;    
+    flex-flow: row wrap;
+    width: 80%;
+    height: 75%;
+    border: solid #180D00 1px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 5px 0px #180D00;
+    overflow: auto;
+}
+
+#results-container {
+    width: 90%;
+    height: auto;
+    border: solid #180D00 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 5px 0px #180D00;
+    background: #A3763D;
+    opacity: 0.9;
+    color: #180D00; 
+    padding: 0 0 25px 0;
+    display: none;
+    overflow: auto;
+    /* #A3763D #7D521C #563306 #341D00 #180D00 */
+}
+
+h1.results-h1 {
+    text-align: center;
+}
+
+h1.winner {
+    font-size: 75px;
+    margin: 90px 0 90px 0;
+    color: #FFDF00;
+}
+
+#results-left {
+    width: 50%;
+    border-right: #180D00 solid 1px;
+}
+
+div#hands {
+    text-align: center;
+}
+
+div#hands h1.results-h1 {
+    margin-bottom: 0;
+}
+
+#results-right {
+    width: 50%;
+    padding-right: 0;
+    text-align: center;
+}
+
+#welcome-container {
+    width: 90%;
+    height: auto;
+    border: solid #180D00 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 5px 0px #180D00;
+    background: #A3763D;
+    opacity: 0.9;
+    color: #180D00; 
+    padding: 25px 0 25px 0;
+    overflow: auto;
+    /* display: none; */
+    /* #A3763D #7D521C #563306 #341D00 #180D00 */
+}
+
+#container-left-right {
+    display: flex;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#welcome-left {
+    width: 65%;
+    border-right: #180D00 solid 1px;
+}
+
+#welcome-right {
+    width: 35%;
+    padding-right: 0;
+    text-align: center;
+}
+
+h1#welcome {
+    font-size: 2em;
+    text-align: center;
+    border: 1px solid #A3763D;
+    margin: 0 0 0 0;
+    margin-bottom: 30px;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    margin: 25px 25px 25px 25px;
+    width: 150px;
+    text-align: center;
+    font-family: 'Leckerli One', cursive;
+    color: #180D00;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: 100;
+    margin: 0 0 0 0;
+}
+
+h3.left {
+    padding-left: 15%;
+    padding-top: 10px;
+}
+
+h3.right {
+    text-align: center;
+    padding-top: 10px;
+}
+
+p {
+    padding-left: 10%;
+    padding-right: 15%;
+    font-weight: 100;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+}
+
+ul {
+    padding-left: 10%;
+    padding-right: 5%;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+}
+
+span.rank {
+    color: #7D521C;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#p1__container { 
+    background-color: #A3763D;
+    width: 50%;
+    height: 100%;
+}
+
+#p1-dice-grid {
+    display: none;
+}
+
+#p2__container { 
+    background-color: #7D521C;
+    width: 50%;
+    height: 100%;
+}
+
+#p2-dice-grid {
+    display: none;
+}
+
+button {
+    color: #180D00;
+    display: inline-block;
+    font-size: 50px;
+    border: solid 1px #180D00 !important;
+    padding: 3px 5px 0px 5px !important;
+}
+
+button:hover {
+    background-color: #341D00;
+    color: #A3763D;
+    cursor: pointer;
+}
+
+button:focus{
+    outline: 0;
+}
+
+.btn-q {
+    background: none;
+    position: absolute;
+    box-shadow: 1px 1px 5px 0px #180D00;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#help {
+    width: 45%;
+    height: 55%;
+    border: solid #180D00 1px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 5px 0px #180D00;
+    background: #A3763D;
+    opacity: 0.9;
+    color: #180D00; 
+    display: none;
+    overflow: auto;
+}
+
+.btn-roll {
+    background: none;
+    position: absolute;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 1px 1px 5px 0px #180D00;
+}
+
+.btn-roll.btn-roll-p1 {
+    left: 10%;
+    top: 80%;
+}
+
+.btn-roll.btn-roll-p2 {
+    right: 10%;
+    top: 80%;
+}
+
+.btn-next {
+    background: none;
+    position: absolute;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 1px 1px 5px 0px #180D00;
+}
+
+.btn-next-p1 {
+    left: 33%;
+    top: 80%;
+    display: none;
+}
+
+.btn-next-p2 {
+    right: 33%;
+    top: 80%;
+    display: none;
+}
+
+.btn-start {
+    background: none;
+    border: none;
+    padding: 0 0 0 0;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px 0px #180D00;
+}
+
+.btn-start:hover {
+    color: #A3763D;
+    cursor: pointer;
+}
+
+.btn-again {
+    background: none;
+    border: none;
+    padding: 0 0 0 0;
+    box-shadow: 1px 1px 5px 0px #180D00;
+}
+
+.btn-again:hover {
+    color: #A3763D;
+    cursor: pointer;
+}
+
+.btn-new {
+    background: none;
+    border: none;
+    padding: 0 0 0 0;
+    box-shadow: 1px 1px 5px 0px #180D00;
+}
+
+#copyright {
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+/* DICE STYLING: */
+
+/* Player 1 */
+.dice {
+    position: absolute;
+    height: 100px;
+    box-shadow: 1px 1px 5px 0px #180D00;
+}
+
+.dice.p1_position_1 {
+    left: 10%;
+    top: 30%;
+}
+
+.dice.p1_position_2 {
+    left: 20%;
+    top: 30%;
+}
+
+.dice.p1_position_3 {
+    left: 30%;
+    top: 30%;
+}
+
+.dice.p1_position_4 {
+    left: 15%;
+    top: 50%;
+}
+
+.dice.p1_position_5 {
+    left: 25%;
+    top: 50%;
+}
+
+/* Player 2 */
+.dice.p2_position_1 {
+    right: 10%;
+    top: 30%;
+}
+
+.dice.p2_position_2 {
+    right: 20%;
+    top: 30%;
+}
+
+.dice.p2_position_3 {
+    right: 30%;
+    top: 30%;
+}
+
+.dice.p2_position_4 {
+    right: 15%;
+    top: 50%;
+}
+
+.dice.p2_position_5 {
+    right: 25%;
+    top: 50%;
+}
+
+.dice:hover {
+    cursor: pointer;
+}
+
+
+/*
+COLORS (from light to dark)
+#A3763D
+#7D521C
+#563306
+#341D00
+#180D00
+*/
